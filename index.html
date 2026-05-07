@@ -1,95 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Danh Mục Sản Phẩm</title>
+    <title>Tổng Kho Đèn</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         html { scroll-behavior: smooth; }
-        body { font-family: -apple-system, sans-serif; text-align: center; background: #f8f9fa; margin: 0; padding-top: 50px; }
-        
-        /* Menu nhỏ gọn hơn */
+        body { font-family: -apple-system, sans-serif; background: #f8f9fa; margin: 0; padding-top: 60px; text-align: center; }
         .menu { background: #222; position: fixed; top: 0; width: 100%; z-index: 100; display: flex; justify-content: center; }
-        .menu a { color: white; text-align: center; padding: 12px 15px; text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; }
-        .menu a:hover { background: #444; }
-
-        h1 { font-size: 1.5rem; margin: 20px 0 10px; color: #333; }
-        .category-title { margin: 30px 0 15px; color: #d32f2f; font-size: 14px; letter-spacing: 1px; border-bottom: 1px solid #ddd; display: inline-block; padding-bottom: 5px; }
-
-        /* Chia 2 ảnh một hàng */
-        .gallery { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); /* Quan trọng: Chia 2 cột đều nhau */
-            gap: 10px; 
-            padding: 10px; 
-            max-width: 800px; 
-            margin: 0 auto; 
-        }
-
-        .product { 
-            background: white; 
-            padding: 8px; 
-            border-radius: 6px; 
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center;
-        }
-
-        /* Ảnh thu nhỏ lại */
-        .product img { 
-            width: 100%; 
-            aspect-ratio: 1 / 1; /* Giúp ảnh vuông vức đồng đều */
-            object-fit: cover; 
-            border-radius: 4px; 
-        }
-
-        .product p { 
-            margin: 8px 0 0; 
-            font-size: 12px; 
-            font-weight: 600; 
-            color: #444; 
-            line-height: 1.2;
-            height: 30px; /* Giới hạn độ cao tên SP để các hộp bằng nhau */
-            overflow: hidden;
-        }
+        .menu a { color: white; padding: 12px 15px; text-decoration: none; font-size: 13px; font-weight: bold; text-transform: uppercase; }
+        .category-title { margin: 30px 0 10px; color: #d32f2f; font-size: 14px; font-weight: bold; border-bottom: 1px solid #ddd; display: inline-block; }
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; max-width: 800px; margin: 0 auto; }
+        .product { background: white; padding: 8px; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .product img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 4px; }
+        .product p { margin: 8px 0 0; font-size: 12px; font-weight: 600; color: #444; height: 30px; overflow: hidden; }
     </style>
 </head>
 <body>
 
-    <div class="menu">
-        <a href="#den-chum">Đèn Chùm</a>
-        <a href="#den-tha">Đèn Thả</a>
-        <a href="#quat-tran">Quạt Trần</a>
-    </div>
-
+    <div class="menu" id="nav-menu"></div>
     <h1>TỔNG KHO SẢN PHẨM</h1>
+    <div id="main-content"></div>
 
-    <div id="quat-tran" class="category-title">✦ QUẠT ĐÈN TRANG TRÍ ✦</div>
-    <div class="gallery">
-        <div class="product">
-            <img src="quat-8-canh-vang.jpg"> <p>Quạt 8 cánh vàng</p>
-        </div>
-        <div class="product">
-            <img src="quat-8-canh-nau.jpg">
-            <p>Đèn Quạt 8 cánh nâu </p>
-        </div>
-<div class="product">
-            <img src="quat-8-canh-nau-den.jpg">
-            <p>Đèn Quạt 8 cánh đen </p>
-        </div>
-    </div>
+    <script>
+        // ==========================================
+        // KHU VỰC CHỈNH SỬA: ĐIỀN SẢN PHẨM TẠI ĐÂY
+        // ==========================================
+        const data = {
+            "ĐÈN CHÙM": [
+                ["7532.jpg", "Đèn chùm pha lê"],
+                ["den-2.jpg", "Đèn chùm cổ điển"],
+                ["den-3.jpg", "Đèn chùm hiện đại"],
+            ],
+            "ĐÈN THẢ": [
+                ["tha-1.jpg", "Đèn thả bàn ăn"],
+                ["tha-2.jpg", "Đèn thả decor"],
+            ],
+            "QUẠT TRẦN": [
+                ["quat-8-canh-vang.jpg", "Quạt trần 8 cánh vàng"],
+                ["quat-8-canh-nau.jpg", "Quạt trần 8 cánh nâu"],
+                ["quat-8-canh-nau-den.jpg", "Quạt trần 8 cánh đen"],
+                ["quat-8-canh-nau-den.jpg", "Quạt trần 8 cánh đen"],
+            ]
+        };
+        // ==========================================
 
-    <div id="den-tha" class="category-title">✦ ĐÈN THẢ BÀN ĂN ✦</div>
-    <div class="gallery">
-        <div class="product">
-            <img src="ten-anh-3.jpg">
-            <p>Đèn Thả Hiện Đại</p>
-        </div>
-        <div class="product">
-            <img src="ten-anh-4.jpg">
-            <p>Đèn Thả Bắc Âu</p>
-        </div>
-    </div>
+        const menuBox = document.getElementById('nav-menu');
+        const contentBox = document.getElementById('main-content');
 
+        for (const category in data) {
+            // Tạo Menu
+            const slug = category.replace(/\s+/g, '-').toLowerCase();
+            menuBox.innerHTML += `<a href="#${slug}">${category}</a>`;
+
+            // Tạo tiêu đề danh mục
+            let html = `<div id="${slug}" class="category-title">✦ ${category} ✦</div><div class="gallery">`;
+            
+            // Tạo danh sách sản phẩm
+            data[category].forEach(item => {
+                html += `
+                    <div class="product">
+                        <img src="${item[0]}" loading="lazy">
+                        <p>${item[1]}</p>
+                    </div>`;
+            });
+            
+            html += `</div>`;
+            contentBox.innerHTML += html;
+        }
+    </script>
 </body>
 </html>
