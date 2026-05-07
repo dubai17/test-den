@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Danh Mục Sản Phẩm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Giúp xem trên điện thoại chuẩn hơn -->
+    <style>
+        html { scroll-behavior: smooth; } /* Hiệu ứng trượt mượt mà khi bấm menu */
+        body { font-family: sans-serif; text-align: center; background: #f4f4f4; margin: 0; padding-top: 60px; }
+        
+        /* Chỉnh thanh Menu dính chặt ở trên cùng */
+        .menu { background: #333; overflow: hidden; position: fixed; top: 0; width: 100%; z-index: 100; }
+        .menu a { float: left; display: block; color: white; text-align: center; padding: 14px 20px; text-decoration: none; font-weight: bold;}
+        .menu a:hover { background: #555; }
+
+        /* Chỉnh khung hiển thị ảnh */
+        .category-title { margin-top: 40px; color: #d32f2f; text-transform: uppercase; }
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+        .product { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 300px; }
+        img { width: 100%; height: auto; border-radius: 5px; display: block; }
+        p { margin-top: 10px; font-weight: bold; color: #333; }
+    </style>
+</head>
+<body>
+
+    <!-- THANH MENU -->
+    <div class="menu">
+        <a href="#den-chum">ĐÈN CHÙM</a>
+        <a href="#den-tha">ĐÈN THẢ</a>
+        <a href="#quat-tran">QUẠT TRẦN</a>
+    </div>
+
+    <h1>TỔNG KHO SẢN PHẨM</h1>
+
+    <!-- DANH MỤC 1: ĐÈN CHÙM -->
+    <h2 id="den-chum" class="category-title">- ĐÈN CHÙM PHÒNG KHÁCH -</h2>
+    <div class="gallery">
+        <div class="product">
+            <img src="anh-den-chum-1.jpg">
+            <p>Đèn Chùm Pha Lê Cao Cấp</p>
+        </div>
+        <div class="product">
+            <img src="anh-den-chum-2.jpg">
+            <p>Đèn Chùm Tân Cổ Điển</p>
+        </div>
+    </div>
+
+    <!-- DANH MỤC 2: ĐÈN THẢ -->
+    <h2 id="den-tha" class="category-title">- ĐÈN THẢ BÀN ĂN -</h2>
+    <div class="gallery">
+        <div class="product">
+            <img src="anh-den-tha-1.jpg">
+            <p>Đèn Thả Hiện Đại</p>
+        </div>
+        <div class="product">
+            <img src="anh-den-tha-2.jpg">
+            <p>Đèn Thả Bắc Âu</p>
+        </div>
+    </div>
+
+    <!-- DANH MỤC 3: QUẠT TRẦN -->
+    <h2 id="quat-tran" class="category-title">- QUẠT TRẦN TRANG TRÍ -</h2>
+    <div class="gallery">
+        <div class="product">
+            <img src="anh-quat-tran-1.jpg">
+            <p>Quạt Trần Cánh Gỗ</p>
+        </div>
+        <div class="product">
+            <img src="anh-quat-tran-2.jpg">
+            <p>Quạt Trần Giấu Cánh</p>
+        </div>
+    </div>
+
+</body>
+</html>
